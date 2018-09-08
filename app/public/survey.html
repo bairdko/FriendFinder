@@ -161,6 +161,9 @@
       <button type= "Submit" class = "btn btn-primary" data-toggle = "myModal" id = "submit">Find my friend!</button>
       
 
+      <div id = "#bffName"></div>
+      <div id = "bffPhoto"></div>
+
     </form>
 
 
@@ -170,7 +173,7 @@
   <!--MODAL-->
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mydModal" aria-hidden="true">
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mydModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -183,7 +186,7 @@
           <img src = "" id = "bffPhoto" />
         </div>
       </div>
-</div>
+</div> -->
 
   <!--modal end-->
 
@@ -234,12 +237,14 @@
 
         $.post("/api/friends",results,function(data){
 
-          // $('#bffName').text("Closest Match: " + data.bffName);
-          // $('#bffPhoto').attr('src',data.bffPhoto);
-
           //proof the routing works, just not the modal!
-          alert(bffName);
-          alert(bffPhoto);
+
+          // $('#bffName').text("Closest Match: " + data.bffName);
+          //$('#bffPhoto').attr('src',data.bffPhoto);
+
+          
+          alert(data.bffName);
+          alert(data.bffPhoto);
 
           // $('#myModal').modal('toggle');
 
